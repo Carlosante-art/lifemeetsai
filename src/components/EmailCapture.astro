@@ -6,31 +6,19 @@ interface Props {
 }
 
 const {
-	heading = "Stay in the loop",
-	description = "Get weekly insights on how AI meets everyday life. No spam, unsubscribe anytime.",
-	buttonText = "Subscribe",
+	heading = "Want the prompt templates from this post?",
+	description = "Send me an email and I'll reply with the templates — plus a few more I've been building for common home decisions.",
+	buttonText = "Email me",
 } = Astro.props;
 ---
 
 <section class="my-12 rounded-xl bg-gray-50 px-6 py-10 text-center">
 	<h2 class="mb-2 text-2xl font-bold text-gray-900">{heading}</h2>
 	<p class="mx-auto mb-6 max-w-md text-gray-600">{description}</p>
-	<form class="mx-auto flex max-w-md flex-col gap-3 sm:flex-row" onsubmit="return false;">
-		<input
-			type="email"
-			placeholder="you@example.com"
-			required
-			class="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 text-base focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-		/>
-		<button
-			type="submit"
-			class="rounded-lg bg-blue-600 px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-700"
-		>
-			{buttonText}
-		</button>
-	</form>
-	<p class="mt-3 text-xs text-gray-400">
-		<!-- TODO: Wire up ConvertKit or MailerLite -->
-		Powered by your future email provider
-	</p>
+	<a
+		href="mailto:contact@lifemeetsai.com?subject=Send me the prompt templates"
+		class="inline-block rounded-lg bg-blue-600 px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-700"
+	>
+		{buttonText}
+	</a>
 </section>
