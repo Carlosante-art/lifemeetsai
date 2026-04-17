@@ -58,7 +58,7 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 								<p class="mb-3 text-sm text-gray-400">
 									<FormattedDate date={post.data.pubDate} />
 								</p>
-								<h3 class="mb-2 text-lg font-semibold leading-snug break-words hyphens-none text-gray-900 transition-colors group-hover:text-blue-600">
+								<h3 class="mb-2 text-lg md:text-xl font-semibold leading-snug break-normal text-gray-900 transition-colors group-hover:text-blue-600">
 									{post.data.title}
 								</h3>
 								<p class="text-base leading-relaxed text-gray-500">
@@ -80,21 +80,21 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 				<h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">How this site works</h2>
 				<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					<div class="rounded-xl border border-gray-100 bg-gray-50 p-8">
-						<h3 class="mb-3 text-xl font-bold text-gray-900">Real situations.</h3>
+						<h3 class="mb-3 text-lg md:text-xl font-bold break-normal text-gray-900">Real situations.</h3>
 						<p class="text-base leading-relaxed text-gray-500">
 							Not hypothetical use cases. Actual decisions from my life (or readers') —
 							paint colors, furniture, gadgets, organization.
 						</p>
 					</div>
 					<div class="rounded-xl border border-gray-100 bg-gray-50 p-8">
-						<h3 class="mb-3 text-xl font-bold text-gray-900">Full conversations.</h3>
+						<h3 class="mb-3 text-lg md:text-xl font-bold break-normal text-gray-900">Full conversations.</h3>
 						<p class="text-base leading-relaxed text-gray-500">
 							Every post includes screenshots of the actual AI conversation.
 							You see the prompts, the mistakes, and what came back.
 						</p>
 					</div>
 					<div class="rounded-xl border border-gray-100 bg-gray-50 p-8">
-						<h3 class="mb-3 text-xl font-bold text-gray-900">Honest results.</h3>
+						<h3 class="mb-3 text-lg md:text-xl font-bold break-normal text-gray-900">Honest results.</h3>
 						<p class="text-base leading-relaxed text-gray-500">
 							I show what worked, what didn't, and what I'd do differently.
 							No hype. No shilling. Just honest reporting.
