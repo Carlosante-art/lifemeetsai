@@ -12,13 +12,46 @@ const {
 } = Astro.props;
 ---
 
-<section class="my-12 rounded-xl bg-gray-50 px-6 py-10 text-center">
-	<h2 class="mb-2 text-2xl font-bold text-gray-900">{heading}</h2>
-	<p class="mx-auto mb-6 max-w-md text-gray-600">{description}</p>
-	<a
-		href="mailto:contact@lifemeetsai.com?subject=Send me the prompt templates"
-		class="inline-block rounded-lg bg-blue-600 px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-700"
-	>
+<section class="email-capture">
+	<h2>{heading}</h2>
+	<p>{description}</p>
+	<a href="mailto:contact@lifemeetsai.com?subject=Send me the prompt templates">
 		{buttonText}
 	</a>
 </section>
+<style>
+	.email-capture {
+		margin: 4em 0;
+		padding: 3em 2em;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+		text-align: center;
+	}
+	.email-capture h2 {
+		font-family: var(--font-serif);
+		font-weight: 500;
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	.email-capture p {
+		color: var(--text-secondary);
+		max-width: 480px;
+		margin: 0 auto 1.5em;
+		font-size: 0.95em;
+	}
+	.email-capture a {
+		display: inline-block;
+		background: var(--accent);
+		color: white;
+		padding: 0.75em 2em;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95em;
+		transition: background 0.2s ease;
+	}
+	.email-capture a:hover {
+		background: var(--accent-hover);
+		color: white;
+	}
+</style>

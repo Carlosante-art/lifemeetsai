@@ -9,7 +9,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 const allPosts = (await getCollection('blog'))
 	.filter((post) => !post.id.startsWith('test-'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 3);
+	.slice(0, 5);
 
 const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog';
 ---
@@ -18,84 +18,243 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			/* Hero */
+			.hero {
+				max-width: 680px;
+				margin: 0 auto;
+				padding: 5em 1.5em 4em;
+			}
+			.hero h1 {
+				font-family: var(--font-serif);
+				font-weight: 600;
+				font-size: 3em;
+				line-height: 1.1;
+				margin-bottom: 0.5em;
+				color: var(--text-primary);
+			}
+			.hero p {
+				font-size: 1.15em;
+				line-height: 1.7;
+				color: var(--text-secondary);
+				max-width: 560px;
+				margin-bottom: 2em;
+			}
+			.hero-links {
+				display: flex;
+				gap: 2em;
+				align-items: center;
+			}
+			.hero-links a.primary {
+				background: var(--accent);
+				color: white;
+				padding: 0.75em 1.75em;
+				border-radius: 4px;
+				text-decoration: none;
+				font-weight: 500;
+				transition: background 0.2s ease;
+			}
+			.hero-links a.primary:hover {
+				background: var(--accent-hover);
+				color: white;
+			}
+			.hero-links a.secondary {
+				color: var(--text-secondary);
+				text-decoration: none;
+				font-size: 0.95em;
+				transition: color 0.2s ease;
+			}
+			.hero-links a.secondary:hover {
+				color: var(--text-primary);
+			}
+
+			/* Stories */
+			.stories {
+				max-width: 680px;
+				margin: 0 auto;
+				padding: 0 1.5em 4em;
+			}
+			.stories h2 {
+				font-family: var(--font-serif);
+				font-weight: 500;
+				font-size: 1.5em;
+				margin-bottom: 2em;
+				padding-bottom: 0.75em;
+				border-bottom: 1px solid var(--border);
+			}
+			.story-item {
+				display: block;
+				text-decoration: none;
+				padding: 1.75em 0;
+				border-bottom: 1px solid var(--border);
+				transition: opacity 0.2s ease;
+			}
+			.story-item:first-of-type {
+				padding-top: 0;
+			}
+			.story-item:hover {
+				opacity: 0.7;
+			}
+			.story-date {
+				font-size: 0.8em;
+				color: var(--text-secondary);
+				letter-spacing: 0.02em;
+				margin-bottom: 0.5em;
+			}
+			.story-title {
+				font-family: var(--font-serif);
+				font-weight: 500;
+				font-size: 1.35em;
+				line-height: 1.3;
+				color: var(--text-primary);
+				margin-bottom: 0.4em;
+			}
+			.story-excerpt {
+				font-size: 0.95em;
+				line-height: 1.6;
+				color: var(--text-secondary);
+				margin: 0;
+			}
+			.empty-state {
+				color: var(--text-secondary);
+				font-size: 1em;
+				line-height: 1.7;
+			}
+			.empty-state a {
+				color: var(--accent);
+			}
+
+			/* How it works */
+			.how-it-works {
+				max-width: 680px;
+				margin: 0 auto;
+				padding: 4em 1.5em;
+			}
+			.how-it-works h2 {
+				font-family: var(--font-serif);
+				font-weight: 500;
+				font-size: 1.5em;
+				margin-bottom: 2.5em;
+			}
+			.how-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 3em;
+			}
+			.how-grid h3 {
+				font-family: var(--font-serif);
+				font-weight: 500;
+				font-size: 1.1em;
+				margin-bottom: 0.5em;
+				color: var(--text-primary);
+			}
+			.how-grid p {
+				font-size: 0.9em;
+				line-height: 1.6;
+				color: var(--text-secondary);
+				margin: 0;
+			}
+
+			/* About teaser */
+			.about-teaser {
+				max-width: 680px;
+				margin: 0 auto;
+				padding: 4em 1.5em 5em;
+				border-top: 1px solid var(--border);
+			}
+			.about-teaser p {
+				font-size: 1.05em;
+				line-height: 1.7;
+				color: var(--text-secondary);
+				max-width: 560px;
+			}
+			.about-teaser a {
+				color: var(--accent);
+				text-decoration: none;
+				font-size: 0.95em;
+			}
+			.about-teaser a:hover {
+				color: var(--accent-hover);
+			}
+
+			@media (max-width: 720px) {
+				.hero {
+					padding: 3em 1.5em 2.5em;
+				}
+				.hero h1 {
+					font-size: 2.2em;
+				}
+				.hero-links {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 1em;
+				}
+				.how-grid {
+					grid-template-columns: 1fr;
+					gap: 2em;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
 			<!-- HERO -->
-			<section class="mx-auto max-w-4xl px-6 py-24 text-center">
-				<h1 class="mb-8 text-5xl font-bold leading-[1.1] tracking-tight text-gray-900 md:text-6xl">
-					Real AI conversations.<br />Real life decisions.
-				</h1>
-				<p class="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-gray-500">
-					I'm Carlosante. I document how I use AI to solve everyday situations — from choosing
+			<section class="hero">
+				<h1>Real AI conversations.<br />Real life decisions.</h1>
+				<p>
+					I document how I use AI to solve everyday situations — from choosing
 					paint colors to organizing a closet — with full screenshots, real context, and honest
 					results. For people who keep hearing about AI but feel like it's not for them.
 				</p>
-				<div class="flex flex-col items-center justify-center gap-5 sm:flex-row">
-					<a
-						href={latestPostUrl}
-						class="inline-block rounded-lg bg-blue-600 px-8 py-3.5 text-lg font-medium text-white no-underline transition-colors hover:bg-blue-700"
-					>
-						Read the latest story
-					</a>
-					<a
-						href="/about"
-						class="inline-block text-lg font-medium text-gray-500 no-underline transition-colors hover:text-gray-900"
-					>
-						What is this? &rarr;
-					</a>
+				<div class="hero-links">
+					<a href={latestPostUrl} class="primary">Read the latest story</a>
+					<a href="/about" class="secondary">What is this? &rarr;</a>
 				</div>
 			</section>
 
 			<!-- LATEST STORIES -->
-			<section class="mx-auto max-w-5xl px-6 py-20">
-				<h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">Latest Stories</h2>
+			<section class="stories">
+				<h2>Latest Stories</h2>
 				{allPosts.length > 0 ? (
-					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-						{allPosts.map((post) => (
-							<a href={`/blog/${post.id}/`} class="group block rounded-xl border border-gray-200 p-6 no-underline transition-shadow hover:shadow-lg">
-								<p class="mb-3 text-sm text-gray-400">
-									<FormattedDate date={post.data.pubDate} />
-								</p>
-								<h3 class="mb-2 text-lg md:text-xl font-semibold leading-snug break-normal text-gray-900 transition-colors group-hover:text-blue-600">
-									{post.data.title}
-								</h3>
-								<p class="text-base leading-relaxed text-gray-500">
-									{post.data.description}
-								</p>
-							</a>
-						))}
-					</div>
+					allPosts.map((post) => (
+						<a href={`/blog/${post.id}/`} class="story-item">
+							<p class="story-date">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+							<p class="story-title">{post.data.title}</p>
+							<p class="story-excerpt">{post.data.description}</p>
+						</a>
+					))
 				) : (
-					<p class="mx-auto max-w-lg text-center text-lg leading-relaxed text-gray-400">
+					<p class="empty-state">
 						The first story drops this weekend. Check back soon — or reach out at{' '}
-						<a href="mailto:contact@lifemeetsai.com" class="text-blue-600 hover:text-blue-800">contact@lifemeetsai.com</a> to be notified.
+						<a href="mailto:contact@lifemeetsai.com">contact@lifemeetsai.com</a> to be notified.
 					</p>
 				)}
 			</section>
 
 			<!-- HOW IT WORKS -->
-			<section class="mx-auto max-w-5xl px-6 py-20">
-				<h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">How this site works</h2>
-				<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-					<div class="rounded-xl border border-gray-100 bg-gray-50 p-8">
-						<h3 class="mb-3 text-lg md:text-xl font-bold break-normal text-gray-900">Real situations.</h3>
-						<p class="text-base leading-relaxed text-gray-500">
+			<section class="how-it-works">
+				<h2>How this site works</h2>
+				<div class="how-grid">
+					<div>
+						<h3>Real situations.</h3>
+						<p>
 							Not hypothetical use cases. Actual decisions from my life (or readers') —
 							paint colors, furniture, gadgets, organization.
 						</p>
 					</div>
-					<div class="rounded-xl border border-gray-100 bg-gray-50 p-8">
-						<h3 class="mb-3 text-lg md:text-xl font-bold break-normal text-gray-900">Full conversations.</h3>
-						<p class="text-base leading-relaxed text-gray-500">
+					<div>
+						<h3>Full conversations.</h3>
+						<p>
 							Every post includes screenshots of the actual AI conversation.
 							You see the prompts, the mistakes, and what came back.
 						</p>
 					</div>
-					<div class="rounded-xl border border-gray-100 bg-gray-50 p-8">
-						<h3 class="mb-3 text-lg md:text-xl font-bold break-normal text-gray-900">Honest results.</h3>
-						<p class="text-base leading-relaxed text-gray-500">
+					<div>
+						<h3>Honest results.</h3>
+						<p>
 							I show what worked, what didn't, and what I'd do differently.
 							No hype. No shilling. Just honest reporting.
 						</p>
@@ -104,19 +263,13 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 			</section>
 
 			<!-- ABOUT TEASER -->
-			<section class="mx-auto max-w-3xl px-6 py-20 text-center">
-				<h2 class="mb-6 text-3xl font-bold tracking-tight text-gray-900">About Carlosante</h2>
-				<p class="mx-auto mb-8 max-w-2xl text-xl leading-relaxed text-gray-500">
-					I'm 27, based in Sweden, and just a regular person who stumbled into realizing
+			<section class="about-teaser">
+				<p>
+					I'm Carlosante. 27, based in Sweden, and just a regular person who stumbled into realizing
 					how useful AI can be when you stop treating it like a chatbot and start treating
 					it like a smart friend who's seen everything.
 				</p>
-				<a
-					href="/about"
-					class="inline-block text-lg font-medium text-blue-600 no-underline transition-colors hover:text-blue-800"
-				>
-					Read more &rarr;
-				</a>
+				<a href="/about">Read more &rarr;</a>
 			</section>
 		</main>
 		<Footer />

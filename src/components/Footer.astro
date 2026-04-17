@@ -3,34 +3,47 @@ const today = new Date();
 ---
 
 <footer>
-	<nav class="footer-links">
-		<a href="/about">About</a>
-		<a href="/disclosure">Affiliate Disclosure</a>
-		<a href="/privacy">Privacy Policy</a>
-		<a href="mailto:contact@lifemeetsai.com">Contact</a>
-	</nav>
-	<p>&copy; {today.getFullYear()} Carlosante. All rights reserved.</p>
+	<div class="footer-inner">
+		<nav class="footer-links">
+			<a href="/about">About</a>
+			<a href="/disclosure">Affiliate Disclosure</a>
+			<a href="/privacy">Privacy Policy</a>
+			<a href="mailto:contact@lifemeetsai.com">Contact</a>
+		</nav>
+		<p class="copyright">&copy; {today.getFullYear()} Carlosante. All rights reserved.</p>
+	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
+		border-top: 1px solid var(--border);
+		padding: 3em 1.5em 4em;
+		background: var(--bg);
+	}
+	.footer-inner {
+		max-width: 680px;
+		margin: 0 auto;
 		text-align: center;
 	}
 	.footer-links {
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: 1.5em;
-		margin-bottom: 1em;
+		gap: 2em;
+		margin-bottom: 1.5em;
 	}
 	.footer-links a {
 		text-decoration: none;
-		color: rgb(var(--gray));
-		font-size: 0.9em;
+		color: var(--text-secondary);
+		font-size: 0.85em;
+		letter-spacing: 0.02em;
+		transition: color 0.2s ease;
 	}
 	.footer-links a:hover {
-		color: rgb(var(--gray-dark));
+		color: var(--text-primary);
+	}
+	.copyright {
+		color: var(--text-secondary);
+		font-size: 0.8em;
+		margin: 0;
 	}
 </style>
