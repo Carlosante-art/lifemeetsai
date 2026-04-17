@@ -41,14 +41,22 @@ If you've ever felt like AI is something other people use — this site is for y
 
 If you're already comfortable with AI but want to see how it helps with everyday stuff — this site is also for you.
 
+## Reader stories (coming soon)
+
+The best AI conversations are the ones that solve *your* problems, not mine. I'm planning to feature reader situations on this site — real questions from real people, run through AI, documented with the same honesty as my own posts.
+
+If you have a situation you'd like to see me tackle — a decision you're stuck on, a room that feels off, a purchase you can't commit to, anything — send it my way. I'd love to help you think it through.
+
+Email: [contact@lifemeetsai.com](mailto:contact@lifemeetsai.com)
+
 ## How I keep this free
 
 Everything here is free to read. The site is supported by affiliate links to products I'd actually recommend. If you click one and buy something, I may earn a small commission — at no extra cost to you. I only link to things I'd suggest to my own family. You can read more on the [Affiliate Disclosure](/disclosure) page.
 
 ## Get in touch
 
-I'd love to hear from you — especially if something here helped, or if there's a situation you'd like to see me run through AI.
+Whether it's a reader story, a question, or just wanting to say hi — I read every email.
 
-Reach out: [contact@lifemeetsai.com](mailto:contact@lifemeetsai.com)
+[contact@lifemeetsai.com](mailto:contact@lifemeetsai.com)
 
 — Carlosante
