@@ -1,0 +1,58 @@
+---
+title: "Testing All Custom Components"
+description: "A test post that demonstrates every reusable MDX component."
+pubDate: "Apr 17 2026"
+---
+
+import Conversation from '../../components/Conversation.astro';
+import BeforeAfter from '../../components/BeforeAfter.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+This post tests all four custom MDX components.
+
+## 1. Conversation Component
+
+A screenshot from an AI conversation with a caption underneath.
+
+<Conversation
+  screenshot="https://placehold.co/600x400/e2e8f0/475569?text=AI+Chat+Screenshot"
+  caption="ChatGPT helping me debug a tricky async issue — notice how it caught the missing await."
+/>
+
+## 2. Before & After Component
+
+Side-by-side comparison of two states.
+
+<BeforeAfter
+  beforeImage="https://placehold.co/400x300/fecaca/991b1b?text=Before"
+  afterImage="https://placehold.co/400x300/bbf7d0/166534?text=After"
+  beforeLabel="Before AI cleanup"
+  afterLabel="After AI cleanup"
+/>
+
+## 3. Product Card Component
+
+An affiliate product recommendation card.
+
+<ProductCard
+  name="Logitech MX Keys S"
+  description="The keyboard I use daily for writing and coding. Great tactile feel with smart backlighting."
+  price="$109.99"
+  imageUrl="https://placehold.co/400x200/f0f9ff/1e40af?text=MX+Keys+S"
+  affiliateUrl="https://www.amazon.com/dp/example"
+/>
+
+## 4. Email Capture Component
+
+A newsletter signup section.
+
+<EmailCapture
+  heading="Like what you're reading?"
+  description="Join the Life Meets AI newsletter — real stories about using AI tools in everyday life."
+  buttonText="Join the list"
+/>
+
+---
+
+All four components rendered above. If you can see a screenshot with caption, two side-by-side images, a product card with an Amazon button, and an email form — everything works!

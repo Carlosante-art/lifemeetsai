@@ -1,0 +1,29 @@
+---
+interface Props {
+	beforeImage: string;
+	afterImage: string;
+	beforeLabel?: string;
+	afterLabel?: string;
+}
+
+const { beforeImage, afterImage, beforeLabel = "Before", afterLabel = "After" } = Astro.props;
+---
+
+<div class="my-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+	<figure class="m-0">
+		<div class="overflow-hidden rounded-lg border border-gray-200">
+			<img src={beforeImage} alt={beforeLabel} class="block w-full" />
+		</div>
+		<figcaption class="mt-2 text-center text-sm font-semibold text-gray-600">
+			{beforeLabel}
+		</figcaption>
+	</figure>
+	<figure class="m-0">
+		<div class="overflow-hidden rounded-lg border border-gray-200">
+			<img src={afterImage} alt={afterLabel} class="block w-full" />
+		</div>
+		<figcaption class="mt-2 text-center text-sm font-semibold text-gray-600">
+			{afterLabel}
+		</figcaption>
+	</figure>
+</div>

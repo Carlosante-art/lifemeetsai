@@ -1,0 +1,28 @@
+---
+interface Props {
+	name: string;
+	description: string;
+	price: string;
+	imageUrl: string;
+	affiliateUrl: string;
+}
+
+const { name, description, price, imageUrl, affiliateUrl } = Astro.props;
+---
+
+<div class="my-8 mx-auto max-w-sm overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md">
+	<img src={imageUrl} alt={name} class="h-48 w-full object-cover" />
+	<div class="p-5">
+		<h3 class="mb-1 text-lg font-bold text-gray-900">{name}</h3>
+		<p class="mb-3 text-sm text-gray-600">{description}</p>
+		<p class="mb-4 text-xl font-semibold text-gray-900">{price}</p>
+		<a
+			href={affiliateUrl}
+			rel="sponsored nofollow"
+			target="_blank"
+			class="inline-block rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-medium text-white no-underline transition-colors hover:bg-amber-600"
+		>
+			View on Amazon
+		</a>
+	</div>
+</div>
