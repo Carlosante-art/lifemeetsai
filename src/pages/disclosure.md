@@ -42,6 +42,8 @@ As required by the U.S. Federal Trade Commission (FTC) and equivalent regulation
 
 LifeMeetsAI is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com and affiliated sites.
 
+As an Amazon Associate, I earn from qualifying purchases.
+
 ## Questions?
 
 If you have questions about how I handle affiliate relationships, email me: [contact@lifemeetsai.com](mailto:contact@lifemeetsai.com).
