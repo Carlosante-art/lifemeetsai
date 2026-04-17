@@ -11,7 +11,7 @@ type Props = CollectionEntry<'blog'>['data'] | {
 	description: string;
 	pubDate?: Date;
 	updatedDate?: Date;
-	heroImage?: ImageMetadata;
+	heroImage?: ImageMetadata | string;
 };
 
 const raw = Astro.props;
@@ -95,7 +95,11 @@ const { title, description, pubDate, updatedDate, heroImage } = props;
 		<main>
 			{heroImage && (
 				<div class="hero-image">
-					<Image width={1020} height={510} src={heroImage} alt="" />
+					{typeof heroImage === 'string' ? (
+						<img src={heroImage} alt="" width="1020" height="510" />
+					) : (
+						<Image width={1020} height={510} src={heroImage} alt="" />
+					)}
 				</div>
 			)}
 			<article>
