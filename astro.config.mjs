@@ -11,6 +11,10 @@ export default defineConfig({
   site: 'https://lifemeetsai.ckarjalainenjoels.workers.dev',
   integrations: [mdx(), sitemap()],
 
+  redirects: {
+    '/blog/chatgpt-paint-color-advice/': '/',
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
