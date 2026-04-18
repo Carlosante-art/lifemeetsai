@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lifemeetsai.ckarjalainenjoels.workers.dev',
+  site: 'https://lifemeetsai.com',
   integrations: [mdx(), sitemap()],
 
   redirects: {
