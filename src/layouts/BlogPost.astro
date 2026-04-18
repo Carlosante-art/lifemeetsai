@@ -16,11 +16,24 @@ type Props = CollectionEntry<'blog'>['data'] | {
 const raw = Astro.props;
 const props = 'frontmatter' in raw ? (raw as any).frontmatter : raw;
 const { title, description, pubDate, updatedDate, heroImage } = props;
+
+const jsonLd = JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"headline": title,
+	"description": description,
+	...(heroImage && { "image": new URL(heroImage, Astro.site).href }),
+	...(pubDate && { "datePublished": (pubDate instanceof Date ? pubDate : new Date(pubDate)).toISOString() }),
+	...(updatedDate && { "dateModified": (updatedDate instanceof Date ? updatedDate : new Date(updatedDate)).toISOString() }),
+	"author": { "@type": "Person", "name": "Carl" },
+	"publisher": { "@type": "Organization", "name": "LifeMeetsAI" }
+});
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={heroImage} type="article" pubDate={pubDate instanceof Date ? pubDate : pubDate ? new Date(pubDate) : undefined} />
+		<script type="application/ld+json" set:html={jsonLd} />
 		<style>
 			article {
 				max-width: 680px;

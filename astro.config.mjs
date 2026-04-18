@@ -9,7 +9,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lifemeetsai.com',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap({
+    filter: (page) => !page.includes('test-'),
+  })],
 
   redirects: {
     '/blog/chatgpt-paint-color-advice/': '/',

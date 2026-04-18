@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /blog/test-components/
+
+Sitemap: https://lifemeetsai.com/sitemap-index.xml
