@@ -6,6 +6,17 @@ import HeaderLink from './HeaderLink.astro';
 <header>
 	<nav>
 		<a href="/" class="site-title">{SITE_TITLE}</a>
+		<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+			<svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+				<line x1="3" y1="6" x2="21" y2="6" />
+				<line x1="3" y1="12" x2="21" y2="12" />
+				<line x1="3" y1="18" x2="21" y2="18" />
+			</svg>
+			<svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+				<line x1="6" y1="6" x2="18" y2="18" />
+				<line x1="6" y1="18" x2="18" y2="6" />
+			</svg>
+		</button>
 		<div class="nav-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -14,10 +25,13 @@ import HeaderLink from './HeaderLink.astro';
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		border-bottom: 1px solid var(--border);
 		background: var(--bg);
+		position: relative;
+		z-index: 100;
 	}
 	nav {
 		display: flex;
@@ -34,9 +48,21 @@ import HeaderLink from './HeaderLink.astro';
 		color: var(--text-primary);
 		text-decoration: none;
 		letter-spacing: -0.01em;
+		white-space: nowrap;
 	}
 	.site-title:hover {
 		color: var(--accent);
+	}
+	.menu-toggle {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: var(--text-primary);
+		padding: 0.25em;
+	}
+	.icon-close {
+		display: none;
 	}
 	.nav-links {
 		display: flex;
@@ -53,4 +79,62 @@ import HeaderLink from './HeaderLink.astro';
 	.nav-links :global(a.active) {
 		color: var(--text-primary);
 	}
+
+	@media (max-width: 768px) {
+		.site-title {
+			font-size: 1em;
+		}
+		.menu-toggle {
+			display: block;
+		}
+		.nav-links {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: var(--bg);
+			border-bottom: 1px solid var(--border);
+			flex-direction: column;
+			gap: 0;
+			padding: 0.5em 0;
+		}
+		.nav-links.open {
+			display: flex;
+		}
+		.nav-links :global(a) {
+			padding: 0.9em 1.5em;
+			font-size: 1em;
+		}
+		.nav-links :global(a:hover) {
+			background: var(--border);
+		}
+	}
 </style>
+
+<script>
+	const toggle = document.querySelector('.menu-toggle');
+	const nav = document.querySelector('.nav-links');
+	const iconMenu = document.querySelector('.icon-menu');
+	const iconClose = document.querySelector('.icon-close');
+
+	toggle?.addEventListener('click', () => {
+		const open = nav?.classList.toggle('open');
+		toggle.setAttribute('aria-expanded', String(open));
+		if (iconMenu && iconClose) {
+			iconMenu.style.display = open ? 'none' : 'block';
+			iconClose.style.display = open ? 'block' : 'none';
+		}
+	});
+
+	document.addEventListener('click', (e) => {
+		if (!toggle?.contains(e.target as Node) && !nav?.contains(e.target as Node)) {
+			nav?.classList.remove('open');
+			toggle?.setAttribute('aria-expanded', 'false');
+			if (iconMenu && iconClose) {
+				iconMenu.style.display = 'block';
+				iconClose.style.display = 'none';
+			}
+		}
+	});
+</script>
