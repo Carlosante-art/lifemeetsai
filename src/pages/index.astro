@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const allPosts = (await getCollection('blog'))
@@ -198,6 +199,13 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 				color: var(--accent-hover);
 			}
 
+			/* Email capture */
+			.home-email {
+				max-width: 680px;
+				margin: 0 auto;
+				padding: 0 1.5em;
+			}
+
 			@media (max-width: 720px) {
 				.hero {
 					padding: 3em 1.5em 2.5em;
@@ -296,6 +304,15 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 						</p>
 					</div>
 				</div>
+			</section>
+
+			<!-- EMAIL CAPTURE -->
+			<section class="home-email">
+				<EmailCapture
+					heading="Get the prompt library"
+					description="I'm building a library of the exact ChatGPT prompts I use for real decisions. Email only when there's something worth sending."
+					buttonText="Send me the prompts"
+				/>
 			</section>
 
 			<!-- ABOUT TEASER -->
