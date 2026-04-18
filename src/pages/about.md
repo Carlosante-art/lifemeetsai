@@ -1,62 +1,67 @@
 ---
 layout: ../layouts/BlogPost.astro
-title: "About"
-description: "About LifeMeetsAI — real AI conversations for real life."
+title: "About This Site | LifeMeetsAI"
+description: "Real AI conversations about real decisions. Not tutorials, not hype — just documented situations where AI helped make a better choice."
 pubDate: 2026-04-17
 ---
 
-# About
+# About This Site
 
-Hi. I'm Carlosante.
+Most people have heard about AI by now.
 
-I'm 27, I live in Sweden, and I'm just a normal guy.
+Most people also don't use it.
 
-I'm not a designer. I'm not a developer. I don't work in tech. I'm not an AI expert, and I never will be.
+Not because they can't. Because nobody has shown them what it actually looks like — on the stuff that matters. Your kitchen. Your apartment. The decision you've been putting off for three weeks because you don't know how to start.
 
-But a few months ago, something shifted. I started using AI — ChatGPT, Claude — for small things. A question here. A decision there. And every time, I'd walk away thinking: *why didn't I know this was possible?*
+That's what this site is for.
 
-It wasn't the technology that impressed me. It was what the technology **unlocked**:
+I'm Carl — an ordinary person who started using ChatGPT for real decisions and noticed something: the answers I got were better than anything I found on Google, Pinterest, or the "10 best X" articles clogging up every search.
 
-- I learned faster.
-- I made better decisions.
-- I stopped getting stuck on things that used to take me days.
+So I started documenting the conversations.
 
-It quietly started improving my life.
+Real situations. Real prompts. Screenshots of what AI actually said — including where it pushed back, where it disagreed with me, and where it saved me from spending money on the wrong thing.
 
-And then I looked around — and realized most people aren't there yet.
+That's all this site is. That's all it will ever be.
 
-Not because they can't. Not because they're not smart enough. But because nobody has **shown them**. The AI conversation feels like it's happening somewhere else — for developers, for tech people, for Twitter.
+## Who this is for
 
-Meanwhile, your mom is staring at a hallway wall. Your dad is buying the wrong lawn mower. Your friend is trying to figure out what laptop to get. **And AI could help them in five minutes** — if someone just showed them what that actually looks like.
+If you keep hearing about AI but feel like it's not for you — this site is for you.
 
-## This site is for people who keep hearing about AI but feel like it's not for them.
+If you're already using AI but want to see how it handles real decisions (not productivity hacks, not "AI for coders") — this site is for you.
 
-That's the whole point.
+If your mom, sister, or friend is trying to figure something out and you wish there was a clearer way to help them — send them here.
 
-LifeMeetsAI is where I document real conversations I've had with AI about real situations — with screenshots, with results, with the mistakes and the surprises. No theory. No "10 best AI tools" lists. No hype.
+## Reader stories
 
-Just: *here's the situation, here's what I asked, here's what came back, here's what I did with it.*
+The best conversations are the ones that solve your problems.
 
-If you've ever felt like AI is something other people use — this site is for you.
-
-If you're already comfortable with AI but want to see how it helps with everyday stuff — this site is also for you.
-
-## Reader stories (coming soon)
-
-The best AI conversations are the ones that solve *your* problems, not mine. I'm planning to feature reader situations on this site — real questions from real people, run through AI, documented with the same honesty as my own posts.
-
-If you have a situation you'd like to see me tackle — a decision you're stuck on, a room that feels off, a purchase you can't commit to, anything — send it my way. I'd love to help you think it through.
+I'm featuring reader situations on this site — real decisions from real people, run through AI, documented with the same honesty as my own posts. If you have something you're stuck on — a purchase you can't commit to, a room that feels off, a category you don't know how to research — send it my way.
 
 Email: [contact@lifemeetsai.com](mailto:contact@lifemeetsai.com)
 
-## How I keep this free
+Every story I feature is anonymized unless you ask otherwise.
 
-Everything here is free to read. The site is supported by affiliate links to products I'd actually recommend. If you click one and buy something, I may earn a small commission — at no extra cost to you. I only link to things I'd suggest to my own family. You can read more on the [Affiliate Disclosure](/disclosure) page.
+## What you won't find here
+
+- "10 Best AI Tools" lists
+- Tutorials on how to use ChatGPT
+- Tech predictions or industry commentary
+- Affiliate bait disguised as recommendations
+
+This site is one thing: documented conversations where AI helped someone make a real decision. That's it.
+
+## How this works
+
+Every article on this site is free to read and always will be.
+
+I support the site through affiliate links — if you click through and buy something, I may earn a small commission at no cost to you. I only link to products I'd recommend to people I know.
+
+You can read the full [Affiliate Disclosure](/disclosure) page for details.
 
 ## Get in touch
 
-Whether it's a reader story, a question, or just wanting to say hi — I read every email.
+Reader stories, questions, or just wanting to say hi — I read every email.
 
-[contact@lifemeetsai.com](mailto:contact@lifemeetsai.com)
+**[contact@lifemeetsai.com](mailto:contact@lifemeetsai.com)**
 
-— Carlosante
+— Carl
