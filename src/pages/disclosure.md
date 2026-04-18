@@ -48,4 +48,4 @@ As an Amazon Associate, I earn from qualifying purchases.
 
 If you have questions about how I handle affiliate relationships, email me: [contact@lifemeetsai.com](mailto:contact@lifemeetsai.com).
 
-— Carlosante
+— Carl

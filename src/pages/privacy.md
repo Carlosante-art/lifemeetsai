@@ -9,7 +9,7 @@ pubDate: 2026-04-17
 
 *Last updated: April 2026*
 
-LifeMeetsAI is operated by Carlosante, based in Sweden. This policy explains what data I collect, why, and what I do with it.
+LifeMeetsAI is operated by Carl, based in the EU. This policy explains what data I collect, why, and what I do with it.
 
 ## The short version
 
@@ -81,4 +81,4 @@ If I change this policy in a meaningful way, I'll update the "last updated" date
 
 Questions? Email me: [contact@lifemeetsai.com](mailto:contact@lifemeetsai.com).
 
-— Carlosante
+— Carl
