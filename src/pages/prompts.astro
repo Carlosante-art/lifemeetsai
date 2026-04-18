@@ -1,0 +1,244 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead
+			title="ChatGPT Prompts for Real Decisions | LifeMeetsAI"
+			description="The prompt templates I actually use when I ask AI for help with home, shopping, and everyday decisions. Copy, paste, adapt. No fluff, no 500-prompt mega-lists — just the ones that work."
+		/>
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article>
+				<div class="article-header">
+					<h1>The Prompts That Actually Work</h1>
+					<p class="article-description">The prompt templates I actually use when I ask AI for help with home, shopping, and everyday decisions. Copy, paste, adapt.</p>
+				</div>
+				<hr class="article-divider" />
+				<div class="prose">
+					<p>Most people get mediocre answers from AI for one reason: they ask mediocre questions.</p>
+
+					<p>They type something like <em>"best cookware brands?"</em> and get a generic list. They ask <em>"help me decorate my living room"</em> and get Pinterest-level fluff. Then they assume AI is overhyped.</p>
+
+					<p>It isn't. The prompt is.</p>
+
+					<p>This page is the opposite of a "500 ChatGPT prompts" mega-list. It's a small, honest collection of templates I actually use — the same ones documented in the articles on this site. Each one has been tested on real decisions. Each one produces specific, honest, useful answers instead of vague suggestions.</p>
+
+					<p>Copy them. Adapt them. Paste into ChatGPT or Claude. They work.</p>
+
+					<hr />
+
+					<h2>What makes a prompt actually work</h2>
+
+					<p>Three things, every time:</p>
+
+					<p><strong>1. Constraints produce better answers than open questions.</strong></p>
+
+					<p>Asking "what's the best vacuum?" gets you generic. Asking "what's the best vacuum for a small apartment with no carpet and a cat, budget $200" gets you a real recommendation.</p>
+
+					<p><strong>2. Asking AI to be skeptical changes the output.</strong></p>
+
+					<p>A prompt with the line <em>"be honest — if a popular brand is overpriced, say so"</em> pulls completely different content than a neutral prompt. Use it.</p>
+
+					<p><strong>3. Ask for what <em>not</em> to buy, too.</strong></p>
+
+					<p>Every good decision is half "buy this" and half "don't buy that." Most people skip the second half. The prompts below always include it.</p>
+
+					<hr />
+
+					<h2>The prompts</h2>
+
+					<h3>1. For product recommendations in any category</h3>
+
+					<p><strong>When to use:</strong> shopping decisions where there are too many options and you don't know what actually matters.</p>
+
+					<p><strong>What it gave me:</strong> <a href="/blog/non-toxic-cookware/">a complete non-toxic cookware system under $500 — including which famous brands to skip</a>.</p>
+
+<pre><code>I want to replace/buy [category of thing] because [reason/concern].
+
+My situation:
+- [Who uses it, how often]
+- [What I do with it — be specific]
+- [Skill level or context — be honest]
+- [Any constraints — space, dietary, stove type, etc.]
+- Budget: $X total
+
+I shop primarily at: [preferred retailers]
+
+Build me a complete setup. I want:
+1. The X pieces/products I actually need (no filler)
+2. Why each one matters
+3. Specific brand recommendations with reasoning
+4. What to avoid and why
+5. A realistic total cost
+
+Be honest — if popular brands in this category are overpriced for
+what they deliver, say so. I want real recommendations, not brand
+loyalty.</code></pre>
+
+					<hr />
+
+					<h3>2. For setting up a space from scratch</h3>
+
+					<p><strong>When to use:</strong> moving in, renovating, starting over on a room, helping someone get set up.</p>
+
+					<p><strong>What it gave me:</strong> <a href="/blog/first-apartment/">a prioritized first-apartment shopping list for my sister that killed $400 of Pinterest fluff</a>.</p>
+
+<pre><code>[Person] is moving into/setting up [space] in [timeframe]. They have
+[current belongings — be specific, even if it's "basically nothing"].
+
+The situation:
+- Budget: $X total for the first month/phase
+- [Lifestyle context — works full-time, cooks often, travels, etc.]
+- [Size or layout of the space]
+- Will shop at: [preferred retailers]
+- [One sentence on aesthetic or approach]
+
+Build a complete shopping list. I want:
+
+1. Prioritized by what they need in week 1 vs. week 2 vs. later
+2. Specific brands + products where it matters
+3. Where to save money and where to spend a little more
+4. What people always forget to buy
+5. What NOT to buy (the stuff that Pinterest lists include but
+   nobody actually uses)
+
+Be honest — if a category can wait 6 months, tell me. If something
+is worth spending $60 instead of $15, explain why.</code></pre>
+
+					<hr />
+
+					<h3>3. For sensory / atmosphere / "vibe" decisions</h3>
+
+					<p><strong>When to use:</strong> home fragrance, lighting, soundscape, ambient decisions — the ones where the goal is a <em>feeling</em>, not a function.</p>
+
+					<p><strong>What it gave me:</strong> <a href="/blog/hotel-scent/">a 6-piece hotel-scent system with honest takes on Diptyque, Nest, and DS &amp; Durga — plus a reframe that saved me $250</a>.</p>
+
+<pre><code>I want my home/space to [specific sensory goal — smell like X, feel
+like Y, sound like Z].
+
+My situation:
+- [Space size and layout]
+- [Any sensitivities or restrictions]
+- Shop at: [preferred retailers + any premium brands I'm open to]
+- Budget: $X to start
+- [One sentence on what I DON'T want it to feel/smell/sound like]
+
+Build me a complete setup. I want:
+
+1. The X products that actually matter (no filler)
+2. Which rooms/spots each product goes in and why
+3. Specific brand recommendations with reasoning
+4. What to avoid (be specific about what ruins it)
+5. The honest take on famous brands — which are worth it, which
+   are overpriced
+
+Be honest — if something like [known premium brand] is overpriced
+for what it delivers, say so. If there's a cheaper alternative that
+works just as well, mention it. I want real recommendations, not
+brand loyalty.</code></pre>
+
+					<hr />
+
+					<h2>The follow-up questions that matter</h2>
+
+					<p>After the main prompt, these two questions consistently pull the best content out of AI. Use them.</p>
+
+					<p><strong>1. "If I could only buy ONE thing from this list, which one?"</strong></p>
+
+					<p>Forces AI to rank its own recommendations. Cuts through the paralysis of a 10-item list.</p>
+
+					<p><strong>2. "What could go wrong with this plan?"</strong></p>
+
+					<p>Surfaces risks the main answer hides. The best insights in every conversation I've documented came from this question.</p>
+
+					<hr />
+
+					<h2>Three rules for every prompt</h2>
+
+					<p><strong>Be specific.</strong> "Warm color" is useless input. "Benjamin Moore Revere Pewter HC-172" is gold. The more specific the input, the more useful the output.</p>
+
+					<p><strong>Give permission to push back.</strong> The phrase <em>"be honest, even if it contradicts my original plan"</em> in the prompt consistently produces better recommendations.</p>
+
+					<p><strong>Ask for the risks.</strong> "What could go wrong?" is the highest-leverage follow-up question. Use it.</p>
+
+					<hr />
+
+					<h2>More prompts coming</h2>
+
+					<p>I add a new prompt here every time I document a new conversation on the site. If you want them as they drop:</p>
+
+					<EmailCapture
+						heading="Get new prompts when I publish them"
+						description="One email per new prompt, plus any reader-submitted conversations. No spam, unsubscribe anytime."
+						buttonText="Send me the prompts"
+					/>
+
+					<hr />
+
+					<h2>Have a prompt of your own that works?</h2>
+
+					<p>Send it my way. If it's good, I'll feature it here with credit (or keep you anonymous — your call).</p>
+
+					<p><strong><a href="mailto:contact@lifemeetsai.com">contact@lifemeetsai.com</a></strong></p>
+
+					<p>— Carl</p>
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	article {
+		max-width: 680px;
+		margin: 0 auto;
+		padding: 0 1.5em;
+	}
+	.article-header {
+		padding: 4em 0 2em;
+	}
+	.article-header h1 {
+		font-family: var(--font-serif);
+		font-weight: 600;
+		font-size: 2.5em;
+		line-height: 1.15;
+		margin: 0 0 0.4em 0;
+		color: var(--text-primary);
+	}
+	.article-description {
+		font-family: var(--font-serif);
+		font-weight: 400;
+		font-style: italic;
+		font-size: 1.15em;
+		line-height: 1.5;
+		color: var(--text-secondary);
+		margin: 0;
+	}
+	.article-divider {
+		border: none;
+		border-top: 1px solid var(--border);
+		margin: 2em 0 3em;
+	}
+	.prose {
+		font-size: 18px;
+		line-height: 1.7;
+		color: var(--text-primary);
+	}
+	@media (max-width: 720px) {
+		.article-header {
+			padding: 2.5em 0 1.5em;
+		}
+		.article-header h1 {
+			font-size: 1.8em;
+		}
+	}
+</style>
