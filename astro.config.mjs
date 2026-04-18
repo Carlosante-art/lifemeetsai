@@ -6,9 +6,12 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lifemeetsai.com',
+
   integrations: [mdx(), sitemap({
     filter: (page) => !page.includes('test-'),
   })],
@@ -20,4 +23,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });
