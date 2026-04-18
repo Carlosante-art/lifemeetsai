@@ -58,5 +58,11 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
 
 {import.meta.env.PROD && (
-	<script defer data-domain="lifemeetsai.com" src="https://plausible.io/js/script.js"></script>
+	<>
+		<script async src="https://plausible.io/js/pa-fAnZIlNIGRUwzgPVgqYDQ.js"></script>
+		<script set:html={`
+			window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+			plausible.init()
+		`} />
+	</>
 )}
