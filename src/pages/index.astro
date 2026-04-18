@@ -95,6 +95,13 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 			.story-item:hover {
 				opacity: 0.7;
 			}
+			.story-image {
+				width: 100%;
+				aspect-ratio: 2 / 1;
+				object-fit: cover;
+				border-radius: 4px;
+				margin-bottom: 1em;
+			}
 			.story-date {
 				font-size: 0.8em;
 				color: var(--text-secondary);
@@ -219,6 +226,9 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 				{allPosts.length > 0 ? (
 					allPosts.map((post) => (
 						<a href={`/blog/${post.id}/`} class="story-item">
+							{post.data.heroImage && (
+								<img src={typeof post.data.heroImage === 'string' ? post.data.heroImage : ''} alt="" class="story-image" />
+							)}
 							<p class="story-date">
 								<FormattedDate date={post.data.pubDate} />
 							</p>
@@ -265,9 +275,9 @@ const latestPostUrl = allPosts.length > 0 ? `/blog/${allPosts[0].id}/` : '/blog'
 			<!-- ABOUT TEASER -->
 			<section class="about-teaser">
 				<p>
-					I'm Carlosante. 27, based in Sweden, and just a regular person who stumbled into realizing
-					how useful AI can be when you stop treating it like a chatbot and start treating
-					it like a smart friend who's seen everything.
+					I'm Carl — an ordinary person who started using ChatGPT for real decisions and noticed
+					something: the answers were better than anything I found on Google, Pinterest, or
+					the "10 best X" articles clogging up every search. So I started documenting the conversations.
 				</p>
 				<a href="/about">Read more &rarr;</a>
 			</section>
